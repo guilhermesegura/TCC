@@ -3,10 +3,5 @@ const req = require("express/lib/request");
 
 var router = express.Router();
 
-router.get("/", (req,res)=>{ 
-    console.log("Página inicial.")
-    res.render("index")
-    
-})
-
+router.route('/')
 module.exports = router;
