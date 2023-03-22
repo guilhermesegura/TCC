@@ -1,9 +1,11 @@
-var express = require("express"); //O Express é um framework para aplicativo da web do Node.js mínimo e flexível que fornece um conjunto robusto de recursos para aplicativos web e móvel.
-var path = require("path"); // O módulo path disponibiliza diversas funcionalidades úteis para acessar e interagir com o file system.
-app.set("view engine", "ejs");
-var routes = require("./routes/routes")
+var express = require("express"); 
+var path = require("path"); 
+
+var routes = require("./routes/classes")
 var app = express();
 
+app.use(express.json())
+app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 
@@ -12,7 +14,9 @@ app.get("/", (req, res)=>{
 })
 
 
-
+app.use("/api/v1/classes", routes)
 
 const port = 3000
-app.listen(port)
+app.listen(port, ()=>{
+    console.log(`Listen on port  ${port}`)
+})
