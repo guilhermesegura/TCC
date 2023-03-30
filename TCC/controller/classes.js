@@ -1,19 +1,23 @@
-const getallclasses = (req, res) => {
-    res.json({data: "Todas as aulas",})
+const Class = require('../models/classes')
+
+const getallclasses = async (req, res) => {
+    const classes = await Class.find({})
+    res.status(200).json({classes})
 }
-const createclass = (req, res) =>{
-    res.send("Criada com sucesso")
+const createclass = async (req, res) =>{
+    const singleclass = await Class.create(req.body)
+    res.status(201).json({singleclass})
 }
 
-const getclass = (req, res) =>{
+const getclass = async (req, res) =>{
     res.json(req.body)
 }
 
-const updateclass = (req, res) =>{
+const updateclass = async (req, res) =>{
     res.json(req.body)
 }
 
-const deleteclass = (req, res) =>{
+const deleteclass = async (req, res) =>{
     res.send("Deletado com sucesso")
 }
 

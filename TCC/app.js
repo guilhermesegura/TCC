@@ -1,12 +1,14 @@
-var express = require("express"); 
-var path = require("path"); 
+var express = require("express")
+var path = require("path")
+require('express-async-errors')
 
+const connectDB = require('./db/connect')
 var routes = require("./routes/classes")
-var app = express();
+var app = express()
 
 app.use(express.json())
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs")
+app.set("views", path.join(__dirname, "views"))
 
 
 app.get("/", (req, res)=>{
@@ -16,7 +18,14 @@ app.get("/", (req, res)=>{
 
 app.use("/api/v1/classes", routes)
 
-const port = 3000
-app.listen(port, ()=>{
-    console.log(`Listen on port  ${port}`)
-})
+const port = process.env.PORT || 3000
+const start = async () => {
+    try {
+        await connectDB(process.env.MONG_URI)
+        app.listen(port, () => console.log(`Server is listening port ${port}`))
+    } catch(error){
+        console.log(error)
+    }
+}
+
+start()
