@@ -1,5 +1,5 @@
 .footer {
-    background-color: #383838;
+    background-color: #8c52ff;
     color: #fff;
     padding: 1em;
     text-align: center;
@@ -37,6 +37,6 @@
   
   .copy_right span {
     font-weight: bold;
-    color: #8f33e0;
+    color: #fff;
     ;
   }

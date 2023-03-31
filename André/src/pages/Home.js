@@ -1,5 +1,5 @@
 import styles from "./Home.module.css";
-import imagem from '../img/imagem.png'
+import imagem from '../img/undraw.svg'
 
 import LinkButton from "../components/layout/LinkButton";
 
