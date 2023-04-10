@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+const mongoose = require('mongoose')
 
 const {Schema} = mongoose
 
@@ -16,7 +16,10 @@ const ClassSchema = new Schema({
     subject: {
         type: String,
         trim: true,
-        required: true
+        enum: {
+            values: ['Lógica', 'PW1', 'Ética'],
+            message: '{VALUE} is not a subject'
+        }
         
     },
     date: {

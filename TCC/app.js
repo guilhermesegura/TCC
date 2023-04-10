@@ -3,6 +3,8 @@ var path = require("path")
 require('express-async-errors')
 
 const connectDB = require('./db/connect')
+require('dotenv').config()
+
 var routes = require("./routes/classes")
 var app = express()
 
@@ -21,7 +23,7 @@ app.use("/api/v1/classes", routes)
 const port = process.env.PORT || 3000
 const start = async () => {
     try {
-        await connectDB(process.env.MONG_URI)
+        await connectDB(process.env.MONGO_URI)
         app.listen(port, () => console.log(`Server is listening port ${port}`))
     } catch(error){
         console.log(error)
