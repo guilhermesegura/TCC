@@ -15,15 +15,34 @@ const createclass = async (req, res) =>{
 }
 
 const getclass = async (req, res) =>{
-    res.json(req.body)
+    const {id: ClassID} = req.params
+    const singleclass = await Class.findOne({_id: ClassID})
+    if(!singleclass){
+        return res.status(500).json({msg: `No task with id: ${ClassID}`})
+    }
+    return res.status(200).json({singleclass})
 }
 
 const updateclass = async (req, res) =>{
-    res.json(req.body)
+    const {id: ClassID} = req.params
+    const singleclass = await Class.findByIdAndUpdate({_id: ClassID}, req.body, {
+        new: true,
+        runValidators: true
+    })
+    if(!singleclass){
+        return res.status(500).send(`No task with id: ${ClassID}`)
+    }
+    res.status(200).json({msg: 'Congratulations'})
 }
 
+
 const deleteclass = async (req, res) =>{
-    res.send("Deletado com sucesso")
+    const {id: ClassID} = req.params
+    const  singleclass = await Class.findByIdAndDelete({_id: ClassID})
+    if(!singleclass){
+        return res.status(500).send(`No task with id: ${ClassID}`)
+    }
+    res.status(200).json({msg: 'Congratulations'})
 }
 
 module.exports = {
