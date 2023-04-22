@@ -1,10 +1,10 @@
 const Class = require('../models/classes')
 
 const getallclasses = async (req, res) => {
-    const {subject} = req.query
+    const {materia} = req.query
     const queryObject = {}
-    if(subject) {
-        queryObject.subject = subject
+    if(materia) {
+        queryObject.materia = materia
     }
     const classes = await Class.find(queryObject)
     res.status(200).json({classes})

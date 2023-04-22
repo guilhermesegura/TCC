@@ -5,7 +5,8 @@ require('express-async-errors')
 const connectDB = require('./db/connect')
 require('dotenv').config()
 
-var routes = require("./routes/classes")
+var ClassRoutes = require("./routes/classes")
+var StudentRoutes = require("./routes/students") 
 var app = express()
 
 app.use(express.json())
@@ -18,7 +19,8 @@ app.get("/", (req, res)=>{
 })
 
 
-app.use("/api/v1/classes", routes)
+app.use("/api/v1/classes", ClassRoutes)
+app.use("/api/v1/students", StudentRoutes)
 
 const port = process.env.PORT || 3000
 const start = async () => {
