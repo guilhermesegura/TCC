@@ -11,13 +11,6 @@ var StudentRoutes = require("./routes/students")
 var app = express()
 
 app.use(express.json())
-app.set("view engine", "ejs")
-app.set("views", path.join(__dirname, "views"))
-
-
-app.get("/", (req, res)=>{
-    res.render("index")
-})
 
 app.use("/api/v1/teachers", TeachersRoutes)
 app.use("/api/v1/classes", ClassRoutes)

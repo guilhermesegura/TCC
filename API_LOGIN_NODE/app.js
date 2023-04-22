@@ -59,7 +59,7 @@ app.get("/user/:id",checkToken,  async (req, res)=>{ // a função checktoken ta
 //registrando um usúario
 app.post('/auth/register', async(req,res) => {
     
-    const{name, email, password, confirmPassword} = req.body
+    const{name, email, password, confirmPassword, permissao} = req.body
 
     //validações
     if(!name){
@@ -76,6 +76,9 @@ app.post('/auth/register', async(req,res) => {
 
     if(password !== confirmPassword){
         return res.status(422).json({msg: 'as senhas não conferem.'})
+    }
+    if(!permissao){
+        return res.status(422).json({msg: 'você não possui uma permissão.'})
     }
 
     //checando se o usúario existe.
@@ -95,6 +98,7 @@ app.post('/auth/register', async(req,res) => {
         name,       // parametros que irão para o banco de dados do usuário.
         email,
         password: passwordHash, // aqui, vai criar a criptografia do bcrypt, com a constante passwordHash criptografando a contante do password.
+        permissao
     })
 
     //validando possiveis erros que podem dar na tentativa da inserção do banco de dados.
@@ -134,6 +138,7 @@ app.post("/auth/login", async (req,res)=>{
     if(!checkPassword){
         return res.status(422).json({msg:'Senha inválida!'})
     }
+
 
 // trabalhando com os tokens(JWT)
     try {
