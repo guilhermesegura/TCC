@@ -5,6 +5,7 @@ require('express-async-errors')
 const connectDB = require('./db/connect')
 require('dotenv').config()
 
+var TeachersRoutes = require("./routes/teachers")
 var ClassRoutes = require("./routes/classes")
 var StudentRoutes = require("./routes/students") 
 var app = express()
@@ -18,7 +19,7 @@ app.get("/", (req, res)=>{
     res.render("index")
 })
 
-
+app.use("/api/v1/teachers", TeachersRoutes)
 app.use("/api/v1/classes", ClassRoutes)
 app.use("/api/v1/students", StudentRoutes)
 
