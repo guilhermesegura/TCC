@@ -59,13 +59,9 @@ app.get("/user/:id",checkToken,  async (req, res)=>{ // a função checktoken ta
 //registrando um usúario
 app.post('/auth/register', async(req,res) => {
     
-    const{name, email, password, confirmPassword, permissao} = req.body
+    const{email, password, permissao} = req.body
 
     //validações
-    if(!name){
-        return res.status(422).json({msg: 'o nome é obrigatório'})
-    }
-
     if(!email){
         return res.status(422).json({msg: 'o email é obrigatório'})
     }
@@ -74,9 +70,6 @@ app.post('/auth/register', async(req,res) => {
         return res.status(422).json({msg: 'a senha é obrigatória'})
     }
 
-    if(password !== confirmPassword){
-        return res.status(422).json({msg: 'as senhas não conferem.'})
-    }
     if(!permissao){
         return res.status(422).json({msg: 'você não possui uma permissão.'})
     }
@@ -94,8 +87,7 @@ app.post('/auth/register', async(req,res) => {
     const passwordHash = await bcrypt.hash(password, salt)   // aqui é uma camada de segurança, ele pega o password dado pelo usuário, e faz a criptografia dele.
 
     // criando usuário
-    const user = new User({  
-        name,       // parametros que irão para o banco de dados do usuário.
+    const user = new User({           // parametros que irão para o banco de dados do usuário.
         email,
         password: passwordHash, // aqui, vai criar a criptografia do bcrypt, com a constante passwordHash criptografando a contante do password.
         permissao
