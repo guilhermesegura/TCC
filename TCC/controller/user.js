@@ -39,26 +39,26 @@ const loginuser = async (req,res)=>{
     if(!checkPassword){
         return res.status(422).json({msg:'Senha inválida!'})
     }
-
+    return res.status(200).json({msg:"Logado"})
 
 // trabalhando com os tokens(JWT)
-    try {
-        const secret = process.env.SECRET // esse secret, ele vai ser a permissão do jwt, ele normalmente tem que ser uma hash, pois assim fica seguro nosso código.
+    // try {
+    //     const secret = process.env.SECRET // esse secret, ele vai ser a permissão do jwt, ele normalmente tem que ser uma hash, pois assim fica seguro nosso código.
 
-        const token = jwt.sign({
-            id:user._id
-        },
-        secret,
-        )
-        res.status(200).json({msg: 'Autenticação realizada com sucesso', token })
-         // com o processo de validação feito, iremos após isso, colocar os tokens  para serem emitidos aos usuários que fizeram o login.  
-         // após isso, teremos uma rota protegida, apenas para usuários que executaram o login.
-         // essa rota, vai estar lá em cima do código, com o comentário de "rota privada", eventualmente iremos acrescentar uma pasta routes para deixarmos
-         // nosso código mais organizado e simples.           
-    } catch (err) {
-        console.log(error)
-        res.status(500).json({msg:  'Aconteceu um erro no servidor, tente novamente mais tarde.'})
-    }
+    //     const token = jwt.sign({
+    //         id:user._id
+    //     },
+    //     secret,
+    //     )
+    //     res.status(200).json({msg: 'Autenticação realizada com sucesso', token })
+    //      // com o processo de validação feito, iremos após isso, colocar os tokens  para serem emitidos aos usuários que fizeram o login.  
+    //      // após isso, teremos uma rota protegida, apenas para usuários que executaram o login.
+    //      // essa rota, vai estar lá em cima do código, com o comentário de "rota privada", eventualmente iremos acrescentar uma pasta routes para deixarmos
+    //      // nosso código mais organizado e simples.           
+    // } catch (err) {
+    //     console.log(error)
+    //     res.status(500).json({msg:  'Aconteceu um erro no servidor, tente novamente mais tarde.'})
+    // }
 
 }
 
@@ -116,7 +116,7 @@ const updateuser = async (req, res) =>{
         runValidators: true
     })
     if(!singleuser){
-        return res.status(500).send(`No task with id: ${UserID}`)
+        return res.status(500).send(`No User with id: ${UserID}`)
     }
     res.status(200).json({msg: 'Congratulations'})
 }
@@ -124,9 +124,9 @@ const updateuser = async (req, res) =>{
 
 const deleteuser = async (req, res) =>{
     const {id: UserID} = req.params
-    const  singleuser = await Class.findByIdAndDelete({_id: UserID})
+    const  singleuser = await User.findByIdAndDelete({_id: UserID})
     if(!singleuser){
-        return res.status(500).send(`No task with id: ${UserID}`)
+        return res.status(500).send(`No User with id: ${UserID}`)
     }
     res.status(200).json({msg: 'Congratulations'})
 }
