@@ -3,6 +3,7 @@ const express = require('express')
 const bcrypt= require('bcrypt') // o bcrypt serve também para trabalhar com a criptografia de senhas.
 const jwt = require('jsonwebtoken')
 const mongoose = require('mongoose')
+var UserRoutes = require("../TCC/routes/user.js") 
 
 const app = express()
 
@@ -12,11 +13,9 @@ app.use(express.json())
 //Models
 const User = require('./models/User')
 
-
+app.use("/api/v1/users", UserRoutes)
 //Open Route - rota publica
-app.get('/', (req, res) => {
-    res.status(200).json({msg: 'Bem vindo a API'})
-})
+
 
 //Rota privada, rota para usuários que fizeram o login, e receberam sua token de validação.
 app.get("/user/:id",checkToken,  async (req, res)=>{ // a função checktoken ta aqui como segundo parametro, pois ele é um middleware que vai deixar a rota privada.
