@@ -36,7 +36,7 @@ function Cursos() {
           <h2>{post.title}</h2>
           <p>{post.text}</p>
           <p>{post.date}</p>
-          <Link to={`/posts/${post._id}`} className="btn">Ler mais</Link>
+          <Link to={`/posts/${post._id}`} className="btn">Ver mais</Link>
           </div>
         ))
       )}
