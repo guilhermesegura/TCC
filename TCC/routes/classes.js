@@ -10,6 +10,5 @@ const {
 } = require("../controller/classes")
 
 router.route('/').get(getallclasses).post(createclass)
-//router.route('/materia').get(getclass)
 router.route('/:id').get(getclass).patch(updateclass).delete(deleteclass)
 module.exports = router;
