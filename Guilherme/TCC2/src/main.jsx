@@ -9,6 +9,7 @@ import Home from './routes/Home.jsx'
 import Sobre from './routes/Sobre.jsx'
 import Login from './routes/Login.jsx'
 import Cursos from './routes/Cursos.jsx'
+import NovaAula from './routes/NovaAula.jsx'
 
 const router = createBrowserRouter([{
   element: <App/>,
@@ -27,7 +28,11 @@ const router = createBrowserRouter([{
     },
     {
       path:"/cursos",
-      element: <Cursos/>
+      element: <Cursos/>,
+    },
+    {
+      path:"/novaAula",
+      element: <NovaAula/>,
     }
   ]
 }

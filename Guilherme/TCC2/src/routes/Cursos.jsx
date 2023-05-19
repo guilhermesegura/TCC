@@ -1,6 +1,6 @@
 import blogFetch from "../axios/config"
 
-import axios from "axios"
+
 import { useState, useEffect } from "react"
 import "./Cursos.css"
 import { Link } from "react-router-dom"
@@ -14,6 +14,8 @@ function Cursos() {
       const response = await blogFetch.get('/api/v1/classes')
       const data = response.data.classes
       setPosts(data)
+      
+      console.log(posts)
       
 
     } catch (e) {

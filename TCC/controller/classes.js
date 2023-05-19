@@ -10,6 +10,12 @@ const getallclasses = async (req, res) => {
     res.status(200).json({classes})
 }
 const createclass = async (req, res) =>{
+    try {
+        const singleclass = await Class.create(req.body)
+        res.status(201).json({singleclass})
+    } catch (error) {
+        console.log(error)
+    }
     const singleclass = await Class.create(req.body)
     res.status(201).json({singleclass})
 }
