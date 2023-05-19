@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.texto {
+    font-family: Arial, sans-serif;
+    font-size: 4.5em;
+    font-weight: bold;
+    color: #fff;
+    white-space: nowrap;
+    margin-right: 4em;
+}
+
+.imagem {
+    width: 45%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .texto {
+        font-size: 2em;
+    }
+
+    .imagem {
+        width: 80%;
+        max-width: 300px;
+        margin-top: 1em;
+    }
+}
