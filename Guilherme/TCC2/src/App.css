@@ -1,8 +1,9 @@
-.container {
+/* .container {
     max-width: 1000px;
     margin: 2rem auto;
     padding: 0 2rem;
-}
+} */
+
 .App {
     position: relative;
     min-height: 100%;
