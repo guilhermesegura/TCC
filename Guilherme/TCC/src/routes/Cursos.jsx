@@ -14,8 +14,9 @@ function Cursos() {
       const response = await blogFetch.get('/api/v1/classes')
       const data = response.data.classes
       setPosts(data)
+
+      console.log(data)
       
-      console.log(posts)
       
 
     } catch (e) {
@@ -35,9 +36,9 @@ function Cursos() {
       {posts.length === 0 ? (<p>Nenhuma Aula disponível</p>): (
         posts.map((post)=>(
           <div className="post" key={post._id}>
-          <h2>{post.title}</h2>
-          <p>{post.text}</p>
-          <p>{post.date}</p>
+          <h2>{post.titulo}</h2>
+          <p>{post.texto}</p>
+          <p>{post.data}</p>
           <Link to={`/posts/${post._id}`} className="btn">Ver mais</Link>
           </div>
         ))

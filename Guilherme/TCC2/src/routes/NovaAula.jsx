@@ -50,10 +50,10 @@ function NovaAula() {
       </div>
       <div className="form-control">
         <select name="materias" id="materias" onChange={(e)=> setMateria(e.target.value)}>
-        {materias.map((m)=>(
-            <option value={m} key={m}>{m}</option>
+        {materias.map((m, index)=>(
+            <option value={m} key={index}>{m}</option>
         ))}
-        <option selected>Selecione a Matéria</option>
+        <option value="" disabled selected hidden>Selecione a Matéria</option>
         </select>
         
       </div>
