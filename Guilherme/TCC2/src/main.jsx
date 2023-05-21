@@ -10,6 +10,7 @@ import Sobre from './routes/Sobre.jsx'
 import Login from './routes/Login.jsx'
 import Cursos from './routes/Cursos.jsx'
 import NovaAula from './routes/NovaAula.jsx'
+import Aulas from './routes/Aulas.jsx'
 
 const router = createBrowserRouter([{
   element: <App/>,
@@ -31,8 +32,12 @@ const router = createBrowserRouter([{
       element: <Cursos/>,
     },
     {
-      path:"/novaAula",
+      path:"/novaaula",
       element: <NovaAula/>,
+    },
+    {
+      path:"/aulas/:materia",
+      element: <Aulas/>
     }
   ]
 }

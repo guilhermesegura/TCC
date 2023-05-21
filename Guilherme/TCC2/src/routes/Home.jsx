@@ -7,7 +7,7 @@ function Home() {
   return (
     <div  className="container">
 
-      <p className="texto"> Cursos para <br/> aprender  <br/> de verdade! </p>
+      <p className="texto"> Aulas online <br/> para rever  <br/> ou recuperar! </p>
 
       <img src={MeuSvg} alt="Meu SVG" className="imagem" />
 
