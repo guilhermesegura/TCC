@@ -48,7 +48,7 @@ function NovaAula() {
         </div>
         <div className="form-control">
           <label htmlFor="texto">Conteúdo:</label>
-          <textarea id="texto" name="texto" placeholder='Digite o texto da aula' onChange={(e) => setTexto(e.target.value)} />
+          <textarea id="texto" name="texto" className="textarea" placeholder='Digite o texto da aula' onChange={(e) => setTexto(e.target.value)} />
         </div>
         <div className="form-control">
           <select name="materias" id="materias" onChange={(e) => setMateria(e.target.value)}>

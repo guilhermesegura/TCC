@@ -39,7 +39,7 @@ function Aulas() {
           <div className="post" key={post._id}>
           <h2>{post.titulo}</h2>
           <p>{parseDate(post.data)}</p>
-          <Link to={`/posts/${post._id}`} className="btn">Ver mais</Link>
+          <Link to={`/aula/${post._id}`} className="btn">Ver mais</Link>
           </div>
         ))
       )}
