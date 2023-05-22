@@ -2,6 +2,8 @@ import blogFetch from "../axios/config"
 import { useState, useEffect } from "react"
 import { Link, useParams } from "react-router-dom"
 import seta from "../assets/seta-branca.svg"
+import parseDate from "../components/parseDate"
+// import getClasses from "../components/getClasses"
 
 import "./Aulas.css"
 
@@ -19,18 +21,12 @@ function Aulas() {
         }
       }
 
-      const parseDate = (date) => {
-        let dia = new Date (date)
-        var options = {year: 'numeric', month: 'long', day: 'numeric' }
-        return dia.toLocaleDateString("pt-BR", options)
-      }
-
       useEffect(()=>{
         getPosts()
       })
 
   return (
-    <div>
+    <div className="aulas-container">
         <Link to={"/cursos"} ><img src={seta} alt="icone de seta" className="seta-icon"/></Link>
       <h1 className="titulo">Aulas Disponíveis</h1>
       <div className="posts">

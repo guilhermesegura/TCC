@@ -3,7 +3,7 @@
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
-    align-content: center;
+    align-content: center; 
 }
 
 .materia {
@@ -26,7 +26,7 @@
 }
 
 .titulo-materia {
-    margin-bottom: 3em;
+    margin-bottom: 7em;
     text-align: center;
     color: #fff;
 }

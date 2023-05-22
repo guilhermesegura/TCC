@@ -13,6 +13,7 @@ function AdminAulas() {
             const response = await blogFetch.get("/api/v1/classes")
             const data = response.data.classes
             setClasses(data)
+            
         }
         catch(error){
             console.log(error)
@@ -28,7 +29,8 @@ function AdminAulas() {
     <div>
         <h1 className="titulo">Tabela de Aulas</h1>
         <div>
-            <table>
+            {classes.length === 0 ? (<p>Nenhuma aula disponível</p>): (
+                <table>
                 <thead>
                     <tr>
                         <th>
@@ -43,13 +45,24 @@ function AdminAulas() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            
-                        </td>
-                    </tr>
+                    {classes.map((c)=>(
+                        <tr key={c._id}>
+                            <td className="dado-tabela">
+                                {c.titulo}
+                            </td>
+                            <td>
+                                {c.materia}
+                            </td>
+                            <td>
+                                {c.data}
+                            </td>
+                        </tr>
+                    ))}
+                               
                 </tbody>
             </table>
+            )}
+            
         </div>
     </div>
   )
