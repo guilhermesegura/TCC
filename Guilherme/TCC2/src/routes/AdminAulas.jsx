@@ -1,8 +1,9 @@
 import blogFetch from "../axios/config"
 
 import { useState, useEffect } from "react"
-
 import { Link } from "react-router-dom"
+
+import parseDate from "../components/parseDate"
 
 function AdminAulas() {
 
@@ -22,8 +23,18 @@ function AdminAulas() {
 
     useEffect(()=>{
         getClasses()
-    })
+    },[])
 
+    const handleDelete = async(id)=>{
+        try {
+            
+        setClasses(classes.filter((c)=> c._id !== id))
+        await blogFetch.delete(`/api/v1/classes/${id}`)
+        }
+        catch (error) {
+            console.log(error)
+        }
+    }
 
   return (
     <div>
@@ -42,6 +53,12 @@ function AdminAulas() {
                         <th>
                             Data
                         </th>
+                        <th>
+                            Editar
+                        </th>
+                        <th>
+                            Apagar
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,7 +71,13 @@ function AdminAulas() {
                                 {c.materia}
                             </td>
                             <td>
-                                {c.data}
+                                {parseDate(c.data)}
+                            </td>
+                            <td>
+                                Editar
+                            </td>
+                            <td>
+                                <button onClick={()=>{handleDelete(c._id)}} className="btn-delete">Apagar</button>
                             </td>
                         </tr>
                     ))}

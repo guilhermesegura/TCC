@@ -19,6 +19,7 @@ function Footer() {
       <p className={styles.copy_right}>
         <span>Ajudatec</span> &copy; 2023
       </p>
+      <p>Todos os direitos reservados</p>
     </footer>
     </div>
   )

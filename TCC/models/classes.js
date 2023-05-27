@@ -11,7 +11,8 @@ const ClassSchema = new Schema({
     },
     texto: {
         type: String,
-        required: true
+        required: true,
+        trim: true,
     },
     materia: {
         type: String,

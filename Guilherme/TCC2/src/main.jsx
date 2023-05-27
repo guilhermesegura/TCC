@@ -12,6 +12,7 @@ import Cursos from './routes/Cursos.jsx'
 import NovaAula from './routes/NovaAula.jsx'
 import Aulas from './routes/Aulas.jsx'
 import AdminAulas from './routes/AdminAulas.jsx'
+import Aula from './routes/Aula.jsx'
 
 const router = createBrowserRouter([{
   element: <App/>,
@@ -43,7 +44,11 @@ const router = createBrowserRouter([{
     {
       path:"/adminaulas",
       element: <AdminAulas/>
-    }
+    },
+    {
+      path:"/aula/:id",
+      element: <Aula/>
+    } 
   ]
 }
 ])
