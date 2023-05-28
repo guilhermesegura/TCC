@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
 import parseDate from "../components/parseDate"
+import "./AdminAulas.css"
 
 function AdminAulas() {
 
@@ -39,9 +40,9 @@ function AdminAulas() {
   return (
     <div>
         <h1 className="titulo">Tabela de Aulas</h1>
-        <div>
+        <div className="container-tabela">
             {classes.length === 0 ? (<p>Nenhuma aula disponível</p>): (
-                <table>
+                <table className="styled-table">
                 <thead>
                     <tr>
                         <th>
@@ -77,7 +78,7 @@ function AdminAulas() {
                                 Editar
                             </td>
                             <td>
-                                <button onClick={()=>{handleDelete(c._id)}} className="btn-delete">Apagar</button>
+                                <button onClick={()=>{handleDelete(c._id)}} className="btn">Apagar</button>
                             </td>
                         </tr>
                     ))}

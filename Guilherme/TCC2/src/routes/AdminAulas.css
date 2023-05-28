@@ -1,0 +1,28 @@
+.styled-table {
+    border-collapse: collapse;
+    margin: 100px auto;
+    font-size: 1.5em;
+    min-width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: #fff;
+    border-radius: 1em;
+    overflow: hidden;
+    /* font-weight: bold; */
+}
+.styled-table thead tr {
+    background-color: #8c52ff;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #140c25;
+}
+
+.container-tabela {
+    margin: 0 auto;
+}
