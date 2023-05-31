@@ -39,7 +39,12 @@ function AdminAulas() {
 
   return (
     <div>
-        <h1 className="titulo">Tabela de Aulas</h1>
+        <div>
+            <h1 className="titulo">Tabela de Aulas</h1>
+        </div>
+        <div className="container-botao">
+            <Link to={"/novaaula"} className="btn-nova">Nova Aula</Link>
+        </div>
         <div className="container-tabela">
             {classes.length === 0 ? (<p>Nenhuma aula disponível</p>): (
                 <table className="styled-table">

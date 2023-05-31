@@ -3,6 +3,9 @@ import blogFetch from "../axios/config"
 import './NovaAula.css'
 
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
+
+import seta from "../assets/seta-branca.svg"
 
 
 function NovaAula() {
@@ -17,7 +20,8 @@ function NovaAula() {
     console.log(aula)
     await blogFetch.post("/api/v1/classes", {
       titulo: titulo, texto: texto, materia: materia,
-    })
+    }).then(window.alert("Aula criada com sucesso"))
+
   }
 
   const getMaterias = async () => {
@@ -41,6 +45,9 @@ function NovaAula() {
 
     <div className='nova-aula'>
       <h2>Inserir uma nova aula:</h2>
+      <div>
+      <Link to={`/adminaulas`}><img src={seta} alt="seta" className="seta-icon"/></Link>
+      </div>
       <form onSubmit={(e) => criaAula(e)}>
         <div className="form-control">
           <label htmlFor="titulo">Título:</label>

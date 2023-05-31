@@ -26,3 +26,24 @@
 .container-tabela {
     margin: 0 auto;
 }
+
+.btn-nova {
+    background-color: #fff;
+    color: #0e1217;
+    border: 1px solid #fff;
+    opacity: 1;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    max-width: 100px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    margin-left: 20rem;
+}
+
+.container-botao {
+    padding: 0.5rem 1rem;
+    margin-top: 5em;
+    margin-bottom: -5em;
+}
