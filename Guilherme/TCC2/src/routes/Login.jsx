@@ -69,10 +69,6 @@ const styles = {
     width: '0',
     height: '2px',
     transition: 'all 0.4s',
-    background: '#6a7dfe',
-    background: '-webkit-linear-gradient(to left, #21d4fd, #b721ff)',
-    background: '-o-linear-gradient(to left, #21d4fd, #b721ff)',
-    background: '-moz-linear-gradient(to left, #21d4fd, #b721ff)',
     background: 'linear-gradient(to left, #21d4fd, #b721ff)',
   },
   focus_input_after: {

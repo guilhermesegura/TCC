@@ -6,23 +6,9 @@ import "./Cursos.css"
 
 function Cursos() {
 
-  const[posts, setPosts] = useState([])
   const[materias, setMaterias] = useState([])
 
-  const getPosts = async()=>{
-    try {
-      const response = await blogFetch.get('/api/v1/classes')
-      const data = response.data.classes
-      setPosts(data)
-
-      
-      
-      
-
-    } catch (e) {
-      console.log(e)
-    }
-  }
+  
   const getMaterias = async () => {
     try {
       const response = await blogFetch.get("/materias")
@@ -36,14 +22,7 @@ function Cursos() {
     }
   }
 
-  const parseDate = (date) => {
-    let dia = new Date (date)
-    var options = {year: 'numeric', month: 'long', day: 'numeric' }
-    return dia.toLocaleDateString("pt-BR", options)
-  }
-
   useEffect(()=> {
-    getPosts()
     getMaterias()
     
   },[])

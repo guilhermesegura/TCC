@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 
 import {useNavigate, useParams} from "react-router-dom"
 
+import "./EditaAula.css"
+
 function EditaAula() {
     const {id} = useParams()
     const [Class, setClass] = useState({})
@@ -55,7 +57,7 @@ function EditaAula() {
         </div>
         <div className="form-control">
           <label htmlFor="texto">Conteúdo:</label>
-          <textarea id="texto" name="texto" className="textarea" placeholder='Digite o texto da aula' defaultValue={Class.texto} onChange={(e) => setTexto(e.target.value)} />
+          <textarea id="texto" name="texto" className="textarea-edit" placeholder='Digite o texto da aula' defaultValue={Class.texto} onChange={(e) => setTexto(e.target.value)} />
         </div>
         <div className="form-control">
           <select name="materias" id="materias" onChange={(e) => setMateria(e.target.value)}>
@@ -66,8 +68,9 @@ function EditaAula() {
           </select>
 
         </div>
-        <input type="submit" value="Editar Aula" className='btn2' />
+        <input type="submit" value="Editar Aula" className='btn2-edita' />
       </form>
+      <div className="espaço"></div>
     </div>
 
   )
