@@ -80,7 +80,7 @@ function AdminAulas() {
                                 {parseDate(c.data)}
                             </td>
                             <td>
-                                Editar
+                                <Link to={`/editaaula/${c._id}`}>Editar</Link>
                             </td>
                             <td>
                                 <button onClick={()=>{handleDelete(c._id)}} className="btn">Apagar</button>

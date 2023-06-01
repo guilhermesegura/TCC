@@ -17,7 +17,6 @@ function NovaAula() {
   const criaAula = async (e) => {
     e.preventDefault()
     const aula = { titulo, texto, materia }
-    console.log(aula)
     await blogFetch.post("/api/v1/classes", {
       titulo: titulo, texto: texto, materia: materia,
     }).then(window.alert("Aula criada com sucesso"))
