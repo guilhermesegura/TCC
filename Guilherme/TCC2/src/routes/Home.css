@@ -1,36 +1,65 @@
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 85vh;
-    max-width: 1000px;
-    margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24em;
+  margin-top: 12em;
+  margin-bottom: 13em;
 }
 
 .texto {
-    font-size: 4.0em;
-    font-weight: bold;
-    color: #fff;
-    white-space: nowrap;
-    margin-right: 4em;
+  font-size: 5em;
+  font-weight: bold;
+  color: #fff;
+  white-space: nowrap;
+  margin-right: 4em;
 }
 
 .imagem {
-    width: 45%;
+  width: 35%;
 }
 
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
+  .container {
+    flex-direction: column;
+  }
 
-    .texto {
-        font-size: 2em;
-    }
+  .texto {
+    font-size: 2em;
+  }
 
-    .imagem {
-        width: 80%;
-        max-width: 300px;
-        margin-top: 1em;
-    }
+  .imagem {
+    width: 80%;
+    max-width: 300px;
+    margin-top: 1em;
+  }
+}
+
+.participantes {
+  text-align: center;
+}
+
+.participantes-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 100vw;
+}
+
+.participante {
+  text-align: center;
+}
+
+.participante img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.participante h2.nome {
+  font-size: 1.3em
+}
+
+.titulo3 {
+  color: #fff;
 }

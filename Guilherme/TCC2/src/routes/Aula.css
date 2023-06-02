@@ -1,22 +1,25 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .texto-aula {
-    font-size: 1.5em;
-    color: #f5f5f5;
-    text-align: justify;
-    padding: 0 5em 1em 5em;
+  font-size: 1.5em;
+  color: #f5f5f5;
+  padding: 0 2em 0.7em 2em;
 }
 
 .container-aula {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column wrap;
-    height: fit-content;
-    margin-bottom: 5em;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  margin-bottom: 5em;
+  position: relative;
+  min-height: 100vh;
 }
 
 .titulo-aula {
-    font-size: 2.5em;
-    margin-bottom: 3em;
-    text-align: center;
-    color: #fff;
+  font-size: 2.5em;
+  margin-bottom: 3em;
+  text-align: center;
+  color: #fff;
 }
