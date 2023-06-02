@@ -29,7 +29,7 @@ function Cursos() {
 
   return (
     
-    <div>
+    <div className="cursos">
       <h1 className="titulo-materia">Matérias Disponíveis</h1>
       <div className="materias">
       {materias.length === 0 ? (<p>Nenhuma Matéria disponível</p>): (

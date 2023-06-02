@@ -5,6 +5,10 @@
     align-items: center;
     align-content: center; 
     margin: 0 auto;
+    margin-top: 12em;
+}
+.cursos{
+    height: 100%;
 }
 
 .materia {
