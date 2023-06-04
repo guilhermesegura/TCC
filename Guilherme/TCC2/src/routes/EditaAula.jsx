@@ -33,8 +33,9 @@ function EditaAula() {
         try {
           const response = await blogFetch.get("/materias")
           const data = response.data.subject
-    
-          setMaterias(data)
+          
+          setMaterias(data.filter((m) => m !== Class.materia))
+          // setMaterias(data)
     
     
         } catch (error) {
@@ -45,7 +46,7 @@ function EditaAula() {
       useEffect(()=>{
           getAula(id)
           getMaterias()
-      }, [])
+      })
 
   return (
     <div className='nova-aula'>
