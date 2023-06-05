@@ -42,6 +42,7 @@ function AdminAulas() {
         <div>
             <h1 className="titulo">Tabela de Aulas</h1>
         </div>
+        <div className="container-tudo">
         <div className="container-botao">
             <Link to={"/novaaula"} className="btn-nova">Nova Aula</Link>
         </div>
@@ -92,6 +93,7 @@ function AdminAulas() {
             </table>
             )}
             
+        </div>
         </div>
     </div>
   )
