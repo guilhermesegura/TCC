@@ -9,7 +9,7 @@ require('dotenv').config()
 var TeachersRoutes = require("./routes/teachers")
 var ClassRoutes = require("./routes/classes")
 var StudentRoutes = require("./routes/students") 
-var UserRoutes = require("./routes/user.js") 
+var UserRoutes = require("./routes/user") 
 var ClassModel = require("./models/classes")
 
 var app = express()
