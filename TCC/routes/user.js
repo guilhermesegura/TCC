@@ -6,11 +6,13 @@ const {
     updateuser,
     getuser,
     loginuser,
+    getallusers,
     registeruser
 } = require("../controller/user")
 
 router.route("/:id").get(getuser).patch(updateuser).delete(deleteuser)
 router.route("/login").post(loginuser)
 router.route("/register").post(registeruser)
+router.route("/").get(getallusers)
 
 module.exports = router;
