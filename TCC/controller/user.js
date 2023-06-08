@@ -45,7 +45,7 @@ const loginuser = async (req,res)=>{
     if(!checkPassword){
         return res.status(422).json({msg:'Senha inválida!'})
     }
-    return res.status(200).json({msg:"Logado"})
+   
 
 // trabalhando com os tokens(JWT)
     try {
@@ -65,23 +65,22 @@ const loginuser = async (req,res)=>{
         console.log(error)
         res.status(500).json({msg:  'Aconteceu um erro no servidor, tente novamente mais tarde.'})
     }
+ }
 
-}
+//    //se nao tiver token, dá Acesso negado                                                   
+//    if(!token){
+//     return res.status(401).json({msg:" Acesso negado!"})
+// }
 
-   //se nao tiver token, dá Acesso negado                                                   
-   if(!token){
-    return res.status(401).json({msg:" Acesso negado!"})
-}
+// //validando o token
+//     try {
+//         const secret = process.env.SECRET
+//         jwt.verify(token, secret)
 
-//validando o token
-    try {
-        const secret = process.env.SECRET
-        jwt.verify(token, secret)
-
-    next()
-    } catch (error) {
-        res.status(400).json({msg:"Token inválido!"})
-}
+//     next()
+//     } catch (error) {
+//         res.status(400).json({msg:"Token inválido!"})
+// }
 
 
 const registeruser = async(req,res) => {
