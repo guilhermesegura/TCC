@@ -19,7 +19,7 @@ function NovaAula() {
     const aula = { titulo, texto, materia }
     await blogFetch.post("/api/v1/classes", {
       titulo: titulo, texto: texto, materia: materia,
-    }).then(window.alert("Aula criada com sucesso"))
+    }).then(()=>{window.alert("Aula criada com sucesso")}, ()=>{window.alert("Algum erro ocorreu verifique os campos")})
 
   }
 

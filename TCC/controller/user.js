@@ -115,7 +115,8 @@ const registeruser = async(req,res) => {
     // criando usuário
     const user = new User({           // parametros que irão para o banco de dados do usuário.
         email,
-        password: passwordHash, // aqui, vai criar a criptografia do bcrypt, com a constante passwordHash criptografando a contante do password.
+        // password: passwordHash, // aqui, vai criar a criptografia do bcrypt, com a constante passwordHash criptografando a contante do password.
+        password,
         permissao
     })
 

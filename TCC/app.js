@@ -10,7 +10,9 @@ var TeachersRoutes = require("./routes/teachers")
 var ClassRoutes = require("./routes/classes")
 var StudentRoutes = require("./routes/students") 
 var UserRoutes = require("./routes/user") 
+
 var ClassModel = require("./models/classes")
+var UserModel = require("./models/User")
 
 var app = express()
 
@@ -44,6 +46,11 @@ app.use("/api/v1/users", UserRoutes)
 app.get("/materias", (req, res)=>{
     const subject = ClassModel.schema.path('materia').options.enum.values
     res.status(200).json({subject})
+})
+
+app.get("/roles", (req, res)=>{
+    const roles = UserModel.schema.path('permissao').options.enum.values
+    res.status(200).json({roles})
 })
 
 const port = process.env.PORT || 3000

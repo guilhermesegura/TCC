@@ -15,6 +15,9 @@ import Aulas from './routes/Aulas.jsx'
 import AdminAulas from './routes/AdminAulas.jsx'
 import Aula from './routes/Aula.jsx'
 import EditaAula from './routes/EditaAula.jsx'
+import AdminUser from './routes/AdminUser.jsx'
+import NovoUser from './routes/NovoUser.jsx'
+import EditaUser from './routes/EditaUser.jsx'
 
 const router = createBrowserRouter([{
   element: <App/>,
@@ -58,6 +61,18 @@ const router = createBrowserRouter([{
     {
       path:"/editaaula/:id",
       element:<EditaAula/>
+    },
+    {
+      path:"/adminusuarios",
+      element:<AdminUser/>
+    },
+    {
+      path:"/novousuario",
+      element:<NovoUser/>
+    },
+    {
+      path:"/editausuario/:id",
+      element:<EditaUser/>
     }
   ]
 }

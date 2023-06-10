@@ -25,7 +25,7 @@ function EditaAula() {
         e.preventDefault()
         await blogFetch.patch(`/api/v1/classes/${id}`, {
             titulo: titulo, texto: texto, materia: materia,
-          }).then(window.alert("Aula editada com sucesso")).then(navigate("/adminaulas"))
+          }).then(()=>{window.alert("Aula editada com sucesso"); navigate("/adminaulas")}, ()=>{window.alert("Algum erro ocorreu verifique os campos")})
           
     }
 
@@ -34,8 +34,7 @@ function EditaAula() {
           const response = await blogFetch.get("/materias")
           const data = response.data.subject
           
-          
-          setMaterias(data)
+          setMaterias(data.filter(materia => materia !== Class.materia))
     
     
         } catch (error) {
@@ -46,7 +45,7 @@ function EditaAula() {
       useEffect(()=>{
           getAula(id)
           getMaterias()
-      }, [])
+      }, [Class.materia])
 
   return (
     <div className='nova-aula'>

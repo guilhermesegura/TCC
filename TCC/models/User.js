@@ -33,7 +33,7 @@ const UserSchema = new Schema({
         required: true,
         trim: true,
         enum: {
-            values: ['admin', 'student', 'teacher'],
+            values: ['ADMIN', 'Aluno', 'Professor'],
             message: '{VALUE} is not a permission'}
     },
 

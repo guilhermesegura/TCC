@@ -28,6 +28,7 @@
 
 .container-tabela {
     margin: 0 auto;
+    padding-right: 3.125em;
 }
 
 .btn-nova {
@@ -67,11 +68,10 @@
     box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
-.container-botao {
+/* .container-botao {
     /* padding: 0.5rem 1rem;
     margin-top: 5em; */
-    /* margin-bottom: -5em; */
-}
+    /* margin-bottom: -5em; }*/
 
 .container-tudo {
     background-color: #412a6e;
@@ -83,6 +83,7 @@
     margin: 0 auto;
     display: flex;
     flex-flow: column wrap;
+    min-width: 414px;
 }
 
 .link-editar {
