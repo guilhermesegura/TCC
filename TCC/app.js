@@ -1,18 +1,26 @@
-var express = require("express")
-var path = require("path")
-require('express-async-errors')
+import express from "express"
+import path from "path"
+import "express-async-errors"
 
 
-const connectDB = require('./db/connect')
-require('dotenv').config()
+import connectDB from "./db/connect.js"
+import dotenv from "dotenv"
+dotenv.config()
 
-var TeachersRoutes = require("./routes/teachers")
-var ClassRoutes = require("./routes/classes")
-var StudentRoutes = require("./routes/students") 
-var UserRoutes = require("./routes/user") 
 
-var ClassModel = require("./models/classes")
-var UserModel = require("./models/User")
+import ClassRoutes from "./routes/classes.js"
+
+ 
+import userRoutes from "./routes/users.js";
+
+import authRoutes from "./routes/auth.js";
+
+import refreshTokenRoutes from "./routes/refreshToken.js";
+
+import ClassModel from "./models/classes.js"
+import UserModel from "./models/User.js"
+
+
 
 var app = express()
 
@@ -36,11 +44,14 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.use("/api/v1/teachers", TeachersRoutes)
-app.use("/api/v1/classes", ClassRoutes)
-app.use("/api/v1/students", StudentRoutes)
-app.use("/api/v1/users", UserRoutes)
 
+app.use("/api/v1/classes", ClassRoutes)
+
+
+
+app.use("/api", authRoutes);
+app.use("/api/refreshToken", refreshTokenRoutes);
+app.use("/api/users", userRoutes);
 
 
 app.get("/materias", (req, res)=>{
@@ -49,7 +60,7 @@ app.get("/materias", (req, res)=>{
 })
 
 app.get("/roles", (req, res)=>{
-    const roles = UserModel.schema.path('permissao').options.enum.values
+    const roles = UserModel.schema.path('roles').options.enum
     res.status(200).json({roles})
 })
 

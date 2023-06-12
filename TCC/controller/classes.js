@@ -1,4 +1,5 @@
-const Class = require('../models/classes')
+
+import Class from "../models/classes.js"
 
 const getallclasses = async (req, res) => {
     const {materia} = req.query
@@ -45,10 +46,4 @@ const deleteclass = async (req, res) =>{
     res.status(200).json({msg: 'Congratulations'})
 }
 
-module.exports = {
-    getallclasses,
-    createclass,
-    getclass,
-    updateclass,
-    deleteclass
-}
+ export {getallclasses,createclass,getclass,updateclass,deleteclass};

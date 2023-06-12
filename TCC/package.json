@@ -1,8 +1,9 @@
 {
   "name": "tcc",
+  "type":"module",
   "version": "0.0.1",
   "description": "Esse é o nosso projeto de TCC.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
@@ -10,16 +11,17 @@
   "author": "André Calmon, Guilherme Segura, Raphael Câmara,  Phellip Waki, Wallace Lins",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
-    "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
-    "mongoose": "^7.0.2",
+    "path": "^0.12.7",
     "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.3",
+    "express": "^4.18.2",
+    "joi": "^17.9.2",
+    "joi-password-complexity": "^5.1.0",
     "jsonwebtoken": "^9.0.0",
-    "path": "^0.12.7"
-  },
-  "devDependencies": {
+    "mongoose": "^7.2.2",
     "nodemon": "^2.0.22"
-  }
-}
+  }}
+  

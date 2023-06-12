@@ -1,8 +1,8 @@
-const mongoose = require('mongoose')
+import mongoose from "mongoose"
 
 const connectDB = (url) => {
     return mongoose.connect(url)
 }
 // conferir esses parametros na store API
 
-module.exports = connectDB
+export default connectDB
