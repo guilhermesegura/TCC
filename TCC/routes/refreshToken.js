@@ -28,7 +28,7 @@ router.post("/", async (req, res) => {
 				message: "Access token created successfully",
 			});
 		})
-		.catch((err) => res.status(400).json(err));
+		.catch((err) => {res.status(400); console.log(err)});
 });
 
 // logout
@@ -46,7 +46,7 @@ router.delete("/", async (req, res) => {
 				.status(200)
 				.json({ error: false, message: "Logged Out Sucessfully" });
 
-		await userToken.remove();
+		await userToken.deleteOne();
 		res.status(200).json({ error: false, message: "Logged Out Sucessfully" });
 	} catch (err) {
 		console.log(err);

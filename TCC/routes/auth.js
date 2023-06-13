@@ -51,14 +51,11 @@ router.post("/logIn", async (req, res) => {
 				.status(401)
 				.json({ error: true, message: "Invalid email or password" });
 
-		const verifiedPassword = await bcrypt.compare(
-			req.body.password,
-			user.password
-		);
-		if (!verifiedPassword)
+	
+		if (req.body.password !== user.password){
 			return res
 				.status(401)
-				.json({ error: true, message: "Invalid email or password" });
+				.json({ error: true, message: "Invalid email or password" });}
 
 		const { accessToken, refreshToken } = await generateTokens(user);
 

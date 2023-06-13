@@ -1,6 +1,8 @@
 
 import jwt from "jsonwebtoken";
 import UserToken from "../models/UserToken.js";
+// import dotenv from "dotenv"
+// dotenv.config()
 
 const generateTokens = async (user) => {
 	try {

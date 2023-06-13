@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const userTokenSchema = new Schema({
-    userID:{
+    userId:{
         type:Schema.Types.ObjectId,
         required:true
     },
