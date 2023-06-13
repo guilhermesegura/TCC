@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
-  "author": "André Calmon, Guilherme Segura, Raphael Câmara,  Phellip Waki, Wallace Lins",
+  "author": "Guilherme Segura, André Calmon, Raphael Câmara,  Phellip Waki, Wallace Lins",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.8",

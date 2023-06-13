@@ -7,19 +7,21 @@ import { Link } from "react-router-dom"
 
 import seta from "../assets/seta-branca.svg"
 
+import Popup from "../components/Popup"
 
 function NovaAula() {
   const [titulo, setTitulo] = useState()
   const [texto, setTexto] = useState()
   const [materias, setMaterias] = useState([])
   const [materia, setMateria] = useState()
+  const [Gpopup, setGpopup] = useState(false)
 
   const criaAula = async (e) => {
     e.preventDefault()
     const aula = { titulo, texto, materia }
     await blogFetch.post("/api/v1/classes", {
       titulo: titulo, texto: texto, materia: materia,
-    }).then(()=>{window.alert("Aula criada com sucesso")}, ()=>{window.alert("Algum erro ocorreu verifique os campos")})
+    }).then(()=>{/*setGpopup(true)*/window.alert("Aula criada com sucesso")}, ()=>{window.alert("Algum erro ocorreu verifique os campos")})
 
   }
 
@@ -67,6 +69,10 @@ function NovaAula() {
         </div>
         <input type="submit" value="Criar Aula" className='btn2' />
       </form>
+      <Popup trigger={Gpopup} setTrigger={setGpopup}>
+        <img src="https://www.favertaxis.com/img/check.gif" alt="gif" className="gGif" />
+        <h2>Aula criada !</h2>
+      </Popup>
     </div>
 
   )

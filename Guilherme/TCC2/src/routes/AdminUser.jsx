@@ -12,7 +12,7 @@ function AdminUser() {
     
     const getUsers = async()=>{
         try{
-            const response = await blogFetch.get("/api/v1/users")
+            const response = await blogFetch.get("/api/users")
             const data = response.data.users
             setUsers(data)
             
@@ -30,7 +30,7 @@ function AdminUser() {
         try {
             
         setUsers(users.filter((c)=> c._id !== id))
-        await blogFetch.delete(`/api/v1/users/${id}`)
+        await blogFetch.delete(`/api/users/${id}`)
         }
         catch (error) {
             console.log(error)
@@ -52,7 +52,7 @@ function AdminUser() {
                 <thead>
                     <tr>
                         <th>
-                            E-mail
+                            Username
                         </th>
                         <th>
                             Permissão
@@ -72,10 +72,10 @@ function AdminUser() {
                     {users.map((c)=>(
                         <tr key={c._id}>
                             <td className="dado-tabela">
-                                {c.email}
+                                {c.username}
                             </td>
                             <td>
-                                {c.permissao}
+                                {c.roles}
                             </td>
                             <td>
                                 {parseDate(c.data)}

@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-	userName: {
+	username: {
 		type: String,
 		required: true,
 	},
@@ -17,10 +17,17 @@ const userSchema = new Schema({
 		required: true,
 	},
 	roles: {
-		type: [String],
-		enum: ["Aluno", "ADMIN", "Professor"],
-		default: ["Aluno"],
+		required: true,
+		type: String,
+		enum:{
+			values: ["Aluno", "ADMIN"],
+		} 
+		
 	},
+	data:{
+		type: Date,
+		default: Date.now
+	}
 });
 
 const User = mongoose.model("User", userSchema);

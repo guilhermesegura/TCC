@@ -60,7 +60,7 @@ app.get("/materias", (req, res)=>{
 })
 
 app.get("/roles", (req, res)=>{
-    const roles = UserModel.schema.path('roles').options.enum
+    const roles = UserModel.schema.path('roles').options.enum.values
     res.status(200).json({roles})
 })
 

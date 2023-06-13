@@ -3,9 +3,10 @@ import passwordComplexity from "joi-password-complexity";
 
 const signUpBodyValidation = (body) => {
 	const schema = Joi.object({
-		userName: Joi.string().required().label("User Name"),
-		email: Joi.string().email().required().label("Email"),
-		password: passwordComplexity().required().label("Password"),
+		username: Joi.string().required().label("User Name"),
+		email: Joi.string().required().label("Email"),
+		password: Joi.string().required().label("Password"),
+		roles: Joi.string().required().label("Permissão")
 	});
 	return schema.validate(body);
 };
