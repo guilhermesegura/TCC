@@ -1,0 +1,19 @@
+Como iniciar ?
+
+Front: NPM i, NPM RUN DEV
+Back: NPM i, NPM start nodemon app.js
+
+
+No .env, precisa de ter essas 3 informações:
+REFRESH_TOKEN_PRIVATE_KEY = xxxxxxx
+MONGO_URI = mongodb+srv://nomedouser:senha@cluster0.pcdecpq.mongodb.net/
+ACCESS_TOKEN_PRIVATE_KEY = xxxxxxxxxxxxxx
+
+
+rota para cadastrar aulas: /adminaulas
+rota para gerenciar usuários: /adminusuarios
+
+
+
+coisas a fazer: - tela de cadastro de aulas, quando cadastradas muitas aulas, não tem responsividade. 
+                - tela de gerenciamento de usuários, quando cadastrados muitos users, não tem responsividade.
