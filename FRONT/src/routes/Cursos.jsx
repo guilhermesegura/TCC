@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import "./Cursos.css";
 
+import seta from "../assets/seta-branca.svg"
+
 function Cursos() {
   const [materias, setMaterias] = useState([]);
 
@@ -23,6 +25,10 @@ function Cursos() {
   }, []);
 
   return (
+    <div>
+      <div>
+      <Link to={"/arearestrita"} ><img src={seta} alt="icone de seta" className="seta-icon"/></Link>
+      </div>
     <div className="cursos">
       <h1 className="titulo-materia">Matérias Disponíveis</h1>
       <div className="materias">
@@ -39,6 +45,7 @@ function Cursos() {
           ))
         )}
       </div>
+    </div>
     </div>
   );
 }

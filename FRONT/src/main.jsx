@@ -18,6 +18,7 @@ import EditaAula from './routes/EditaAula.jsx'
 import AdminUser from './routes/AdminUser.jsx'
 import NovoUser from './routes/NovoUser.jsx'
 import EditaUser from './routes/EditaUser.jsx'
+import AreaRestrita from './routes/AreaRestrita.jsx'
 
 const router = createBrowserRouter([{
   element: <App/>,
@@ -73,6 +74,10 @@ const router = createBrowserRouter([{
     {
       path:"/editausuario/:id",
       element:<EditaUser/>
+    },
+    {
+      path:"/arearestrita",
+      element:<AreaRestrita/>
     }
   ]
 }
