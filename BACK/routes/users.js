@@ -11,6 +11,12 @@ router.get("/admin", auth, roleCheck(["admin"]), (req, res) => {
 	res.status(200).json({ message: "user authenticated." });
 });
 
+router.get("/user", auth, (req, res) => {
+	res.status(200).json({ message: "user authenticated." });
+});
+
+
+
 router.get("/", async (req, res)=>{
 	const users = await User.find({})
     res.status(200).json({users})

@@ -8,7 +8,7 @@ import {createBrowserRouter, RouterProvider, Route} from "react-router-dom"
 import Home from './routes/Home.jsx'
 import Cadastro from './routes/Cadastro.jsx'
 import Sobre from './routes/Sobre.jsx'
-import Login from './routes/Login.jsx'
+import Login from './routes/Login/Login'
 import Cursos from './routes/Cursos.jsx'
 import NovaAula from './routes/NovaAula.jsx'
 import Aulas from './routes/Aulas.jsx'
@@ -18,7 +18,6 @@ import EditaAula from './routes/EditaAula.jsx'
 import AdminUser from './routes/AdminUser.jsx'
 import NovoUser from './routes/NovoUser.jsx'
 import EditaUser from './routes/EditaUser.jsx'
-import AreaRestrita from './routes/AreaRestrita.jsx'
 
 const router = createBrowserRouter([{
   element: <App/>,
@@ -74,10 +73,6 @@ const router = createBrowserRouter([{
     {
       path:"/editausuario/:id",
       element:<EditaUser/>
-    },
-    {
-      path:"/arearestrita",
-      element:<AreaRestrita/>
     }
   ]
 }
