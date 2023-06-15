@@ -18,6 +18,7 @@ import EditaAula from './routes/EditaAula.jsx'
 import AdminUser from './routes/AdminUser.jsx'
 import NovoUser from './routes/NovoUser.jsx'
 import EditaUser from './routes/EditaUser.jsx'
+import AreaRestrita from './routes/AreaRestrita.jsx'
 
 const router = createBrowserRouter([{
   element: <App/>,
@@ -37,6 +38,10 @@ const router = createBrowserRouter([{
     {
       path: "/cadastro",
       element: <Cadastro/>,
+    },
+    {
+      path: "/arearestrita",
+      element: <AreaRestrita/>,
     },
     {
       path:"/cursos",
