@@ -5,15 +5,24 @@ import {IoIosCopy} from "react-icons/io";
 import { IoMdExit} from "react-icons/io";
 import { ImFileText2 } from "react-icons/im";
 
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-// import blogFetch from '../axios/config';
+import blogFetch from '../axios/config';
 
 import "./AreaRestrita.css"
 
-function AreaRestrita(props) {
+function AreaRestrita() {
     const [User, setUser] = useState({})
+    const {id} = useParams()
+
+    const getUser = async(id)=>{
+        const response = await blogFetch.get(`/api/users/${id}`)
+        const data = response.data.user
+        setUser(data) 
+     }
+
     useEffect(()=>{ 
+        getUser(id)
     }, [])
     
   return (
@@ -30,7 +39,7 @@ function AreaRestrita(props) {
                 <span>Conteúdo</span>
             </Link>
         </div>
-        {User.role === 'admin' &&
+        {User.roles === 'ADMIN' &&
             <div className='materia'>
             <IoMdPeople size="large" className='icon'/>
                 <Link className="btn-materia" to={"/adminusuarios"}>
@@ -38,7 +47,7 @@ function AreaRestrita(props) {
                 </Link>
             </div>
         }
-        {User.role === "admin" && 
+        {User.roles === "ADMIN" && 
         <div className='materia'>
         <IoIosCopy size="large" className='icon'/>
             <Link className="btn-materia" to={"/adminaulas"}>

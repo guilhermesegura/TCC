@@ -22,6 +22,16 @@ router.get("/", async (req, res)=>{
     res.status(200).json({users})
 })
 
+router.get("/email", async (req,res)=>{
+    const {email} = req.query
+    const queryObject = {}
+    if(email) {
+        queryObject.email = email
+    }
+    const user = await User.findOne(queryObject)
+    res.status(200).json({user})
+})
+
 router.get("/:id", async(req, res)=>{
 	const id= req.params.id
  

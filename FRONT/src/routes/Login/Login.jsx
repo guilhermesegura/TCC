@@ -71,17 +71,27 @@
 
 // export default Login;
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./styles.module.css";
+import blogFetch from "../../axios/config";
+
+
 
 const Login = () => {
 	const [data, setData] = useState({ email: "", password: "" });
 	const [error, setError] = useState("");
+	const [User, setUser] = useState({})
 
 	const handleChange = ({ currentTarget: input }) => {
 		setData({ ...data, [input.name]: input.value });
 	};
+
+	const getUser = async(email)=>{
+		const response = await blogFetch.get(`/api/users/email?email=${email}`)
+		const data = response.data.user
+		setUser(data) 
+	 }
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -89,7 +99,8 @@ const Login = () => {
 			const url = "http://localhost:3000/api/logIn";
 			const { data: res } = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
-			window.location = "/";
+		
+			window.location = `/arearestrita/${User._id}`;
 		} catch (error) {
 			if (
 				error.response &&
@@ -100,6 +111,11 @@ const Login = () => {
 			}
 		}
 	};
+
+	useEffect(()=>{
+		getUser(data.email)
+	},[data.email])
+	
 
 	return (
 		<div className={styles.login_container}>
@@ -115,6 +131,7 @@ const Login = () => {
 							value={data.email}
 							required
 							className={styles.input}
+							
 						/>
 						<input
 							type="password"
