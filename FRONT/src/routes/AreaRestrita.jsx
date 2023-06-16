@@ -29,7 +29,7 @@ function AreaRestrita() {
     <div className='materias'>
         <div className='materia'>
             <IoIosPerson size="large" className='icon'/>
-            <Link className="btn-materia" to={`/editausuario/${User.id}`}>
+            <Link className="btn-materia" to={`/editausuario/${User._id}`}>
                 <span>Perfil</span>
             </Link>
         </div>
