@@ -98,8 +98,8 @@ const Login = () => {
 		try {
 			const url = "http://localhost:3000/api/logIn";
 			const { data: res } = await axios.post(url, data);
-			localStorage.setItem("token", res.data);
-		
+			sessionStorage.setItem("access-token", res.accessToken);
+			sessionStorage.setItem("refresh-token", res.refreshToken);
 			window.location = `/arearestrita/${User._id}`;
 		} catch (error) {
 			if (

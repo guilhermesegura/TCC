@@ -14,6 +14,8 @@ import "./AreaRestrita.css"
 function AreaRestrita() {
     const [User, setUser] = useState({})
     const {id} = useParams()
+    const access_token = sessionStorage.getItem("access-token")
+    const refresh_token = sessionStorage.getItem("refresh-token")
 
     const getUser = async(id)=>{
         const response = await blogFetch.get(`/api/users/${id}`)
@@ -23,6 +25,7 @@ function AreaRestrita() {
 
     useEffect(()=>{ 
         getUser(id)
+        
     }, [])
     
   return (
