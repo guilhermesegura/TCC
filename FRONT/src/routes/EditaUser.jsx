@@ -3,6 +3,10 @@ import blogFetch from "../axios/config"
 import { useState, useEffect } from "react"
 
 import {useNavigate, useParams} from "react-router-dom"
+import { Link } from "react-router-dom"
+
+import seta from "../assets/seta-branca.svg"
+
 
 import "./EditaAula.css"
 
@@ -50,6 +54,9 @@ function EditaUser() {
 
   return (
     <div className='nova-aula'>
+      <div>
+      <Link to={`/arearestrita/${User._id}`} ><img src={seta} alt="icone de seta" className="seta-icon"/></Link>
+      </div>
       <h2>Editando Usuário:</h2>
       <form onSubmit={(e) => editaUser(e)}>
       <div className="form-control">
@@ -64,15 +71,20 @@ function EditaUser() {
           <label htmlFor="password">Senha:</label>
           <input type="text" id="password" name="password" placeholder='Digite a Senha' defaultValue={User.password}  onChange={(e) => setPassword(e.target.value)} />
         </div>
-        <div className="form-control">
+        
+      
+          {User.roles === "Aluno"? (""): (
+          <div className="form-control">
+          <label htmlFor="roles">Permissão:</label>
           <select name="role" id="role" onChange={(e) => setRole(e.target.value)}>
             {permissao.map((m, index) => (
               <option value={m} key={index}>{m}</option>
             ))}
             <option value={User.roles} selected>{User.roles}</option>
-          </select>
-
-        </div>
+          </select> 
+          </div>
+          ) }
+        
         <input type="submit" value="Editar Usuario" className='btn2-edita' />
       </form>
       <div className="espaço"></div>

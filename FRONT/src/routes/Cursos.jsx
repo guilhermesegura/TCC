@@ -1,6 +1,6 @@
 import blogFetch from "../axios/config";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 
 import "./Cursos.css";
 
@@ -8,6 +8,8 @@ import seta from "../assets/seta-branca.svg"
 
 function Cursos() {
   const [materias, setMaterias] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const id = searchParams.get("id")
 
   const getMaterias = async () => {
     try {
@@ -22,12 +24,13 @@ function Cursos() {
 
   useEffect(() => {
     getMaterias();
+    
   }, []);
 
   return (
     <div>
       <div>
-      <Link to={"/arearestrita"} ><img src={seta} alt="icone de seta" className="seta-icon"/></Link>
+      <Link to={`/arearestrita/${id}`} ><img src={seta} alt="icone de seta" className="seta-icon"/></Link>
       </div>
     <div className="cursos">
       <h1 className="titulo-materia">Matérias Disponíveis</h1>

@@ -35,7 +35,7 @@ function AreaRestrita() {
         </div>
         <div className='materia'>
             <ImFileText2 size="large" className='icon'/>
-            <Link className='btn-materia' to={"/cursos"}>
+            <Link className='btn-materia' to={`/cursos?id=${User._id}`}>
                 <span>Conteúdo</span>
             </Link>
         </div>
