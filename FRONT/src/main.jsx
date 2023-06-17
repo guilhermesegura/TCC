@@ -40,7 +40,7 @@ const router = createBrowserRouter([{
       element: <Cadastro/>,
     },
     {
-      path: "/arearestrita/:id",
+      path: "/arearestrita/",
       element: <AreaRestrita/>,
     },
     {

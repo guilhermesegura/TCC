@@ -3,7 +3,7 @@ import blogFetch from "../axios/config"
 import { useState, useEffect } from "react"
 
 import {useNavigate, useParams} from "react-router-dom"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 import seta from "../assets/seta-branca.svg"
 
@@ -12,6 +12,7 @@ import "./EditaAula.css"
 
 function EditaUser() {
     const {id} = useParams()
+    const {state} = useLocation()
     const [User, setUser] = useState({})
     const [username, setUsername] = useState()
     const [email, setEmail] = useState()
@@ -30,7 +31,7 @@ function EditaUser() {
         e.preventDefault()
         await blogFetch.patch(`/api/users/${id}`, {
             username: username, email: email, password: password, roles: role,
-          }).then(()=>{window.alert("Usuário editado com sucesso"); navigate("/adminusuarios")}, ()=>{window.alert("Algum erro ocorreu verifique os campos")})
+          }).then(()=>{window.alert("Usuário editado com sucesso"); navigate(`/${state}`)}, ()=>{window.alert("Algum erro ocorreu verifique os campos")})
           
     }
 
@@ -55,7 +56,7 @@ function EditaUser() {
   return (
     <div className='nova-aula'>
       <div>
-      <Link to={`/arearestrita/${User._id}`} ><img src={seta} alt="icone de seta" className="seta-icon"/></Link>
+      <Link to={`/${state}`} ><img src={seta} alt="icone de seta" className="seta-icon"/></Link>
       </div>
       <h2>Editando Usuário:</h2>
       <form onSubmit={(e) => editaUser(e)}>
@@ -73,7 +74,7 @@ function EditaUser() {
         </div>
         
       
-          {User.roles === "Aluno"? (""): (
+          {state === "arearestrita"? (""): (
           <div className="form-control">
           <label htmlFor="roles">Permissão:</label>
           <select name="role" id="role" onChange={(e) => setRole(e.target.value)}>

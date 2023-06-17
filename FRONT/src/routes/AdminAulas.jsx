@@ -4,6 +4,9 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
 import parseDate from "../components/parseDate"
+
+import seta from "../assets/seta-branca.svg"
+
 import "./AdminAulas.css"
 
 function AdminAulas() {
@@ -39,6 +42,9 @@ function AdminAulas() {
 
   return (
     <div>
+        <div>
+        <Link to={`/arearestrita/`} ><img src={seta} alt="icone de seta" className="seta-icon"/></Link>
+      </div>
         <div>
             <h1 className="titulo">Tabela de Aulas</h1>
         </div>

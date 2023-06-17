@@ -4,17 +4,22 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
 import parseDate from "../components/parseDate"
+
+import seta from "../assets/seta-branca.svg"
+
 import "./AdminAulas.css"
 
 function AdminUser() {
 
     const [users, setUsers] = useState([])
+    const id = sessionStorage.getItem("id")
     
     const getUsers = async()=>{
         try{
             const response = await blogFetch.get("/api/users")
             const data = response.data.users
-            setUsers(data)
+            setUsers(data.filter((c)=> c._id !== id))
+            // setUsers(data)
             
         }
         catch(error){
@@ -39,6 +44,9 @@ function AdminUser() {
 
   return (
     <div>
+        <div>
+        <Link to={`/arearestrita/`} ><img src={seta} alt="icone de seta" className="seta-icon"/></Link>
+      </div>
         <div>
             <h1 className="titulo">Tabela de Usuários</h1>
         </div>
@@ -81,7 +89,7 @@ function AdminUser() {
                                 {parseDate(c.data)}
                             </td>
                             <td>
-                                <Link to={`/editausuario/${c._id}`} className="link-editar">Editar</Link>
+                                <Link to={`/editausuario/${c._id}`} className="link-editar" state={"adminusuarios"}>Editar</Link>
                             </td>
                             <td>
                                 <button onClick={()=>{handleDelete(c._id)}} className="btn-apagar">Apagar</button>

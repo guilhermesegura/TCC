@@ -2,7 +2,9 @@ import blogFetch from "../axios/config"
 
 import { useState, useEffect } from "react"
 
-import {useNavigate, useParams} from "react-router-dom"
+import {useNavigate, useParams, Link} from "react-router-dom"
+
+import seta from "../assets/seta-branca.svg"
 
 import "./EditaAula.css"
 
@@ -49,6 +51,9 @@ function EditaAula() {
 
   return (
     <div className='nova-aula'>
+      <div>
+      <Link to={`/adminaulas`} ><img src={seta} alt="icone de seta" className="seta-icon"/></Link>
+      </div>
       <h2>Editando Aula:</h2>
       <form onSubmit={(e) => editaAula(e)}>
         <div className="form-control">

@@ -18,7 +18,14 @@ router.get("/user", auth, (req, res) => {
 
 
 router.get("/", async (req, res)=>{
-	const users = await User.find({})
+    const {email} = req.query
+    const queryObject = {}
+    if(email) {
+        queryObject.email = email
+        const user = await User.findOne(queryObject)
+        return res.status(200).json({user})
+    }
+	const users = await User.find(queryObject)
     res.status(200).json({users})
 })
 

@@ -13,9 +13,9 @@ import "./AreaRestrita.css"
 
 function AreaRestrita() {
     const [User, setUser] = useState({})
-    const {id} = useParams()
-    const access_token = sessionStorage.getItem("access-token")
-    const refresh_token = sessionStorage.getItem("refresh-token")
+    const id = sessionStorage.getItem("id")
+    // const access_token = sessionStorage.getItem("access-token")
+    // const refresh_token = sessionStorage.getItem("refresh-token")
 
     const getUser = async(id)=>{
         const response = await blogFetch.get(`/api/users/${id}`)
@@ -25,20 +25,19 @@ function AreaRestrita() {
 
     useEffect(()=>{ 
         getUser(id)
-        
     }, [])
     
   return (
     <div className='materias'>
         <div className='materia'>
             <IoIosPerson size="large" className='icon'/>
-            <Link className="btn-materia" to={`/editausuario/${User._id}`}>
+            <Link className="btn-materia" to={`/editausuario/${User._id}`} state={"arearestrita"}>
                 <span>Perfil</span>
             </Link>
         </div>
         <div className='materia'>
             <ImFileText2 size="large" className='icon'/>
-            <Link className='btn-materia' to={`/cursos?id=${User._id}`}>
+            <Link className='btn-materia' to={`/cursos`}>
                 <span>Conteúdo</span>
             </Link>
         </div>

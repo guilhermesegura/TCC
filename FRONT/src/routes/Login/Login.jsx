@@ -75,6 +75,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./styles.module.css";
 import blogFetch from "../../axios/config";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -82,13 +83,14 @@ const Login = () => {
 	const [data, setData] = useState({ email: "", password: "" });
 	const [error, setError] = useState("");
 	const [User, setUser] = useState({})
+	const navigate = useNavigate()
 
 	const handleChange = ({ currentTarget: input }) => {
 		setData({ ...data, [input.name]: input.value });
 	};
 
 	const getUser = async(email)=>{
-		const response = await blogFetch.get(`/api/users/email?email=${email}`)
+		const response = await blogFetch.get(`/api/users?email=${email}`)
 		const data = response.data.user
 		setUser(data) 
 	 }
@@ -100,7 +102,8 @@ const Login = () => {
 			const { data: res } = await axios.post(url, data);
 			sessionStorage.setItem("access-token", res.accessToken);
 			sessionStorage.setItem("refresh-token", res.refreshToken);
-			window.location = `/arearestrita/${User._id}`;
+			sessionStorage.setItem("id", User._id)
+			navigate( `/arearestrita/`);
 		} catch (error) {
 			if (
 				error.response &&
