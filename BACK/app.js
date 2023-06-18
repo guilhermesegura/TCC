@@ -2,6 +2,7 @@ import express from "express"
 import path from "path"
 import "express-async-errors"
 
+import cors from "cors"
 
 import connectDB from "./db/connect.js"
 import dotenv from "dotenv"
@@ -25,6 +26,8 @@ import UserModel from "./models/User.js"
 var app = express()
 
 app.use(express.json())
+
+app.options('*', cors())
 
 app.use(function (req, res, next) {
 
