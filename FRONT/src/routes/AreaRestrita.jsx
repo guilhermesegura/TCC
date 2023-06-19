@@ -5,7 +5,7 @@ import {IoIosCopy} from "react-icons/io";
 import { IoMdExit} from "react-icons/io";
 import { ImFileText2 } from "react-icons/im";
 
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import blogFetch from '../axios/config';
 
@@ -13,9 +13,10 @@ import "./AreaRestrita.css"
 
 function AreaRestrita() {
     const [User, setUser] = useState({})
+    const navigate = useNavigate()
     const id = sessionStorage.getItem("id")
     // const access_token = sessionStorage.getItem("access-token")
-    // const refresh_token = sessionStorage.getItem("refresh-token")
+    const refresh_token = sessionStorage.getItem("refresh-token")
 
     const getUser = async(id)=>{
         const response = await blogFetch.get(`/api/users/${id}`)
@@ -23,8 +24,14 @@ function AreaRestrita() {
         setUser(data) 
      }
 
+    const handleLogout = async()=>{
+        await blogFetch.delete("/api/refreshToken/", {data: {refreshToken: refresh_token}})
+        .then(()=>{sessionStorage.clear();window.alert("Logout realizado com sucesso");navigate("/")}, ()=>{window.alert("Ocorreu algum erro no servidor contate o suporte")})
+    }
+
     useEffect(()=>{ 
         getUser(id)
+
     }, [])
     
   return (
@@ -61,7 +68,7 @@ function AreaRestrita() {
         
         <div className='materia'>
             <IoMdExit size="large" className='icon'/>
-            <button className="btn-materia" onClick={()=>{/*rota pra excluir o token e navigate para voltar para a Home*/}}>
+            <button className="btn-materia" onClick={()=>handleLogout()}>
                 <span>Sair</span>
             </button>
         </div>
