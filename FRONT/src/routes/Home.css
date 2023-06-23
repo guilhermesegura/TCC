@@ -94,18 +94,65 @@ h1.texto {
   text-align: justify;
 }
 
-
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   h1.texto {
     font-size: 4em;
+    margin-right: 0;
+    text-align: center;
   }
 
   .imagem1 {
+    width: 50%;
     max-width: 250px;
+    margin: 0 auto;
   }
 
   .imagem2 {
+    width: 50%;
     max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .aprendizado-container {
+    flex-basis: 100%;
+    margin-top: 3em;
+    text-align: center;
+  }
+
+  .aprendizado {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+
+  .participantes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .participante img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .participante h2.nome {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  h1.texto {
+    font-size: 3em;
+  }
+
+  .imagem1 {
+    width: 70%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .imagem2 {
+    width: 70%;
+    max-width: 250px;
+    margin: 0 auto;
   }
 
   .aprendizado {

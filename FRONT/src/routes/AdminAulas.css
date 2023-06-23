@@ -2,7 +2,6 @@
     border-collapse: collapse;
     margin: 50px auto;
     font-size: 1.5em;
-    min-width: 400px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     color: #fff;
     border-radius: 1em;
@@ -13,15 +12,18 @@
 h1.titulo {
     color: #333;
 }
+
 .styled-table thead tr {
     background-color: #355cf6a8;
     color: #ffffff;
     text-align: left;
 }
+
 .styled-table th,
 .styled-table td {
     padding: 12px 15px;
 }
+
 .styled-table tbody tr:nth-of-type(odd) {
     background-color: #182e86;
 }
@@ -33,6 +35,7 @@ h1.titulo {
 .container-tabela {
     margin: 0 auto;
     padding-right: 3.125em;
+    overflow-x: auto;
 }
 
 .btn-nova {
@@ -62,6 +65,7 @@ h1.titulo {
     /* margin-left: 20rem; */
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 } 
+
 .btn-nova:hover {
     color: #ffffff;
     background-color: #1c2e74ee;
@@ -72,16 +76,10 @@ h1.titulo {
     box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
-/* .container-botao {
-    /* padding: 0.5rem 1rem;
-    margin-top: 5em; */
-    /* margin-bottom: -5em; }*/
-
 .container-tudo {
     background-color: #192a6de8;
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    height: 40vh;
     padding: 5em 10em 5em 5em;
     width: 100vh;
     margin: 0 auto;
@@ -97,12 +95,13 @@ h1.titulo {
     cursor: pointer;
     transition: 0.5s;
 }
-.link-editar:hover{
+
+.link-editar:hover {
     background-color: #93a5ec;
     border-radius: 0.4em;
 }
 
-.btn-apagar{
+.btn-apagar {
     background-color: #fff;
     color: #0e1217;
     border: 1px solid #fff;
@@ -116,10 +115,8 @@ h1.titulo {
     text-decoration: none;
 }
 
-.btn-apagar:hover{
+.btn-apagar:hover {
     color: #fff;
     background-color: #d81900;
     border: 1px solid #d81900;
 }
-
-
