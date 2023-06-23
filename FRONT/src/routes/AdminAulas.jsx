@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 import parseDate from "../components/parseDate"
 
-import seta from "../assets/seta-branca.svg"
+import seta from "../assets/seta-branca.png"
 
 import "./AdminAulas.css"
 

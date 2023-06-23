@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 
 import {useNavigate, useParams, Link} from "react-router-dom"
 
-import seta from "../assets/seta-branca.svg"
+import seta from "../assets/seta-branca.png"
 
 import "./EditaAula.css"
 

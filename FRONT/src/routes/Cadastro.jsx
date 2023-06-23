@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import seta from "../assets/seta-branca.svg";
+import seta from "../assets/seta-branca.png";
 
 // import './Cadastro.css'
 

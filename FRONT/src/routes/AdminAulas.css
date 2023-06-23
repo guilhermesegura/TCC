@@ -9,8 +9,12 @@
     overflow: hidden;
     /* font-weight: bold; */
 }
+
+h1.titulo {
+    color: #333;
+}
 .styled-table thead tr {
-    background-color: #8c52ff;
+    background-color: #355cf6a8;
     color: #ffffff;
     text-align: left;
 }
@@ -19,11 +23,11 @@
     padding: 12px 15px;
 }
 .styled-table tbody tr:nth-of-type(odd) {
-    background-color: #21143b;
+    background-color: #182e86;
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-    background-color: #140c25;
+    background-color: #182e86;
 }
 
 .container-tabela {
@@ -60,7 +64,7 @@
 } 
 .btn-nova:hover {
     color: #ffffff;
-    background: #21143b;
+    background-color: #1c2e74ee;
     font-size: 16px;
     box-shadow: 
     0 0 7px #fff,
@@ -74,7 +78,7 @@
     /* margin-bottom: -5em; }*/
 
 .container-tudo {
-    background-color: #412a6e;
+    background-color: #192a6de8;
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     height: 40vh;
@@ -84,6 +88,7 @@
     display: flex;
     flex-flow: column wrap;
     min-width: 414px;
+    margin: 2em 10em 20em 20em;
 }
 
 .link-editar {
@@ -93,7 +98,8 @@
     transition: 0.5s;
 }
 .link-editar:hover{
-    color: #8c52ff;
+    background-color: #93a5ec;
+    border-radius: 0.4em;
 }
 
 .btn-apagar{
@@ -115,3 +121,5 @@
     background-color: #d81900;
     border: 1px solid #d81900;
 }
+
+

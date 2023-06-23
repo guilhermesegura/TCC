@@ -1,81 +1,72 @@
 .materias {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center; 
-    margin: 0 auto;
-    margin-top: 12em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  margin: 0 auto;
+  margin-top: 2em;
 }
-.cursos{
-    height: 100%;
+
+.cursos {
+  height: 100%;
 }
 
 .materia {
-    margin-bottom: 1em;
-    background-color: #6356db;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 250px;
-    min-width: 200px;
-    border-radius: 20px;
-    box-shadow:
-  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-  0 12.5px 10px rgba(0, 0, 0, 0.06),
-  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-  0 100px 80px rgba(0, 0, 0, 0.12)
+  margin-bottom: 1em;
+  background-color: #355cf6a8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 250px;
+  min-width: 200px;
+  border-radius: 20px;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
 .titulo-materia {
-    margin-bottom: 3em;
-    text-align: center;
-    color: #fff;
+  margin-bottom: 3em;
+  text-align: center;
+  color: #333;
 }
 
 .materia-nome {
-    text-align: center;
-    color: #fff;
+  text-align: center;
+  color: #fff;
 }
 
 .btn-materia {
-    font-size: 11px;
-    border: none;
-    border-radius: 10px;
-    color: #000000;
-    line-height: 1.2;
-    text-transform: uppercase;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40%;
-    height: 50px;
-    background: #e6e1fc;
-    cursor: pointer;
-    transition: 0.5s;
-    opacity: 1;
-    text-decoration: none;
-    font-weight: bold;
-    /* box-shadow: 
+  font-size: 11px;
+  border: none;
+  border-radius: 10px;
+  color: #000000;
+  line-height: 1.2;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 50px;
+  background: #e6e1fc;
+  cursor: pointer;
+  transition: 0.5s;
+  opacity: 1;
+  text-decoration: none;
+  font-weight: bold;
+  /* box-shadow: 
     0 0 7px #fff,
     0 0 10px #fff;; */
-    
-    
 }
 
 .btn-materia:hover {
-    color: #ffffff;
-    background: #21143b;
-    font-size: 10px;
-    box-shadow: 
-    0 0 7px #fff,
-    0 0 10px #fff;;
-    box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-    
-   
-    
+  color: #ffffff;
+  background-color: #1b3086e0;
+  font-size: 10px;
+  box-shadow: 0 0 7px #fff, 0 0 10px #fff;
+  box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 

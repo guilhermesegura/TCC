@@ -1,48 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+* {
+  position: relative;
+}
+
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 24em;
-  margin-top: 12em;
-  margin-bottom: 13em;
+  flex-wrap: wrap;
 }
 
-.texto {
-  font-size: 5em;
-  font-weight: bold;
-  color: #fff;
-  white-space: nowrap;
+.conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.texto-container {
+  flex-basis: 50%;
+}
+
+h1.texto {
+  margin-top: 0.6em;
   margin-right: 4em;
+  font-size: 5em;
+  color: #333;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.imagem {
+.aprendizado-container {
+  display: flex;
+  align-items: center;
+  flex-basis: 60%;
+  margin-top: 7em;
+}
+
+.imagem1 {
   width: 35%;
 }
 
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
+.imagem2 {
+  width: 40%;
+}
 
-  .texto {
-    font-size: 2em;
-  }
-
-  .imagem {
-    width: 80%;
-    max-width: 300px;
-    margin-top: 1em;
-  }
+.aprendizado {
+  font-size: 3em;
+  color: #333;
 }
 
 .participantes {
   text-align: center;
 }
 
+.titulo3 {
+  margin-top: 4em;
+  font-size: 2em;
+  color: #333;
+}
+
 .participantes-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  width: 100vw;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1em;
+  justify-items: center;
 }
 
 .participante {
@@ -50,16 +73,55 @@
 }
 
 .participante img {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   border-radius: 50%;
 }
 
 .participante h2.nome {
-  font-size: 1.3em
+  font-size: 1.3em;
+  color: #333;
 }
 
-.titulo3 {
-  color: #fff;
+.copy_right {
+  margin-bottom: 0.5em;
+}
+
+.aprendizado-texto {
+  font-size: 1.5em;
+  color: #333;
+  text-align: justify;
+}
+
+
+@media (max-width: 480px) {
+  h1.texto {
+    font-size: 4em;
+  }
+
+  .imagem1 {
+    max-width: 250px;
+  }
+
+  .imagem2 {
+    max-width: 250px;
+  }
+
+  .aprendizado {
+    font-size: 1.5em;
+  }
+
+  .participantes-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .participante img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .participante h2.nome {
+    font-size: 0.7em;
+  }
 }

@@ -5,7 +5,7 @@ import blogFetch from "../axios/config"
 
 import "./Aula.css"
 
-import seta from "../assets/seta-branca.svg"
+import seta from "../assets/seta-branca.png"
 
 function Aula() {
     const {id} = useParams()

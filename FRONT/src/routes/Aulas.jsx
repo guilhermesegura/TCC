@@ -1,7 +1,7 @@
 import blogFetch from "../axios/config"
 import { useState, useEffect } from "react"
 import { Link, useParams } from "react-router-dom"
-import seta from "../assets/seta-branca.svg"
+import seta from "../assets/seta-branca.png"
 import parseDate from "../components/parseDate"
 // import getClasses from "../components/getClasses"
 

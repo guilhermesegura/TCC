@@ -30,8 +30,8 @@
 }
 
 .btn {
-    background-color: #fff;
-    color: #0e1217;
+    background-color: #355cf6;
+    color: #fff;
     border: 1px solid #fff;
     opacity: 1;
     padding: 0.5rem 1rem;
@@ -45,7 +45,7 @@
 
 .btn:hover {
     color: #fff;
-    background-color: #0e1217;
+    background-color: #a8b8ffe7;
 }
 
 .seta-icon {
