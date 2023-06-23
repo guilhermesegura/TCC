@@ -35,6 +35,8 @@ function AreaRestrita() {
     }, [])
     
   return (
+    <div>
+        <h1 className='titulo-aulas'>Area Restrita</h1>
     <div className='materias'>
         <div className='materia'>
             <IoIosPerson size="large" className='icon'/>
@@ -72,6 +74,7 @@ function AreaRestrita() {
                 <span>Sair</span>
             </button>
         </div>
+    </div>
     </div>
   )
 }

@@ -28,7 +28,7 @@ function Aulas() {
   return (
     <div className="aulas-container">
         <Link to={"/cursos"} ><img src={seta} alt="icone de seta" className="seta-icon"/></Link>
-      <h1 className="titulo">Aulas Disponíveis</h1>
+      <h1 className="titulo-aulas">Aulas Disponíveis</h1>
       <div className="posts">
       {posts.length === 0 ? (<p className="sem-aula" >Nenhuma Aula disponível</p>): (
         posts.map((post)=>(

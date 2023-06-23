@@ -4,7 +4,7 @@ import styles from "./Footer.module.css";
 
 function Footer() {
   return (
-    <div className={styles.div_footer}>
+
       <footer className={styles.footer}>
         <ul className={styles.social_list}>
           <li>
@@ -18,7 +18,7 @@ function Footer() {
         </p>
         <p>Todos os direitos reservados</p>
       </footer>
-    </div>
+   
   );
 }
 
